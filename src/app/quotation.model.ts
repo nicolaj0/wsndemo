@@ -1,17 +1,13 @@
 export interface Quotation {
   id: string;
-  assurePrincipal: Assure;
-  family: Family;
+  assurePrincipal?: Assure;
+  conjoint?: FamilyPerson;
+  enfants?: FamilyPerson[];
 }
 
 export interface Assure {
   dateNaissance: string;
   dateEffet: string;
-}
-
-export interface Family {
-  conjoint: FamilyPerson;
-  enfants: FamilyPerson[];
 }
 
 export interface FamilyPerson {
