@@ -18,11 +18,15 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormGroupComponent} from './components/form-group.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
-import {FormlyDatepickerTypeComponent} from '@ngx-formly/material/datepicker/datepicker.type';
 import {DebugComponent} from './debug.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {PanelWrapperFamilyComponent} from './sante/quotation/panel-wrapper/panel-wrapper-family.component';
 import {MatButtonModule} from '@angular/material/button';
+import {QuotationEnfantComponent} from './sante/quotation/quotation-enfant/quotation-enfant.component';
+import { MyDatePickerComponent} from './components/date-picker/date-picker.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import {MatButtonModule} from '@angular/material/button';
     PanelWrapperComponent,
     FormGroupComponent,
     DebugComponent,
-    PanelWrapperFamilyComponent
+    PanelWrapperFamilyComponent,
+    QuotationEnfantComponent,
+    MyDatePickerComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +52,11 @@ import {MatButtonModule} from '@angular/material/button';
       wrappers: [
         {name: 'panel', component: PanelWrapperComponent},
         {name: 'panelFamily', component: PanelWrapperFamilyComponent},
+        {name: 'repeat', component: QuotationEnfantComponent},
       ],
-      // types: [{name: 'date', component: FormlyDatepickerTypeComponent}]
+      types: [
+        {name: 'repeat', component: QuotationEnfantComponent},
+        {name: 'datePicker', component: MyDatePickerComponent}]
     }),
     FormlyMaterialModule,
     BrowserAnimationsModule,
@@ -55,7 +64,10 @@ import {MatButtonModule} from '@angular/material/button';
     MatExpansionModule,
     MatIconModule,
     MatTabsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

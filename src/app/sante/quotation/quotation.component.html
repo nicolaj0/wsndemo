@@ -1,7 +1,13 @@
-<form [formGroup]="form"  fxLayout="column" fxLayoutGap="20px" >
+<form [formGroup]="form">
   <formly-form
     fxLayout="column" fxLayoutGap="30px"
     [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-  <button type="submit" class="btn btn-primary submit-button">Submit</button>
+  <div fxLayout="row" fxLayoutAlign="flex-end">
+    <button fxLayoutAlign="end" type="button" (click)="tarif()" mat-icon-button
+            color="success">
+      <mat-icon>check</mat-icon>
+      Afficher les tarifs
+    </button>
+  </div>
   <app-form-debug [form]="form.value" [model]="model"></app-form-debug>
 </form>
