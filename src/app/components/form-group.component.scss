@@ -1,0 +1,61 @@
+/*
+@import 'variables';
+:host {
+  display: block;
+  margin-bottom: 12px;
+  mat-expansion-panel,
+  mat-card {
+    &.valid {
+      .progress-top {
+        background: mat-color($wz-primary);
+      }
+    }
+    &.pristine {
+      &:not(.valid) {
+        .progress-top {
+          background: mat-color($wz-accent);
+        }
+      }
+    }
+    &.error {
+      .progress-top {
+        background: mat-color($wz-warn);
+      }
+    }
+    mat-expansion-panel-header {
+      position: relative;
+    }
+    ::ng-deep .mat-expansion-panel-body {
+      display: grid;
+    }
+    .progress-top {
+      transition: width $transitionDuration;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 4px;
+    }
+  }
+  .mat-card-title {
+    font-family: $mainFont;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  .overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+  }
+  .content {
+    &.readonly {
+      pointer-events: none;
+    }
+  }
+}
+*/

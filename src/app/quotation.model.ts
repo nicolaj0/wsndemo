@@ -1,4 +1,5 @@
 export interface Quotation {
+  id: string;
   assurePrincipal: Assure;
   family: Family;
 }
