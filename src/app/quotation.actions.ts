@@ -13,6 +13,12 @@ export const addQuotation = createAction(
   props<{ quotation: Quotation }>()
 );
 
+export const addQuotationSuccess = createAction(
+  '[Quotation/API] Add Quotation',
+  props<{ quotation: Quotation }>()
+);
+
+
 export const upsertQuotation = createAction(
   '[Quotation/API] Upsert Quotation',
   props<{ quotation: Quotation }>()

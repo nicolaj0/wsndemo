@@ -17,7 +17,7 @@ export const initialState: State = adapter.getInitialState({
 
 const quotationReducer = createReducer(
   initialState,
-  on(QuotationActions.addQuotation,
+  on(QuotationActions.addQuotationSuccess,
     (state, action) => adapter.addOne(action.quotation, state)
   ),
   on(QuotationActions.upsertQuotation,

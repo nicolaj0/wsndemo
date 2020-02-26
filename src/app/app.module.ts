@@ -15,7 +15,6 @@ import {PanelWrapperComponent} from './sante/quotation/panel-wrapper/panel-wrapp
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {FormGroupComponent} from './components/form-group.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import {DebugComponent} from './debug.component';
@@ -27,13 +26,13 @@ import { MyDatePickerComponent} from './components/date-picker/date-picker.compo
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatNativeDateModule} from '@angular/material/core';
+import {QuotationEffects} from './quotation-effects.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuotationComponent,
     PanelWrapperComponent,
-    FormGroupComponent,
     DebugComponent,
     PanelWrapperFamilyComponent,
     QuotationEnfantComponent,
@@ -44,7 +43,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     FlexLayoutModule,
     HttpClientModule,
     StoreModule.forRoot({}),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([QuotationEffects]),
     StoreModule.forFeature('quotations', reducer),
     StoreDevtoolsModule.instrument({maxAge: 25}),
     ReactiveFormsModule,
